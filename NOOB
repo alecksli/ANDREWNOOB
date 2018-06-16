@@ -1,0 +1,41 @@
+import turtle
+
+pen = turtle.Turtle()
+screen = turtle.Screen()
+
+class Menu:
+  def __init__(self):
+    self.loadScreen("Menu")
+  def loadScreen(self,sceneName):
+    if sceneName == "Menu":
+      self.drawMenu()
+    else:
+      self.drawMain()            
+  def drawrekt(self):
+    pen.forward(100)
+    pen.left(90)
+    pen.forward(50)
+    pen.left(90)
+    pen.forward(100)
+    pen.left(90)
+    pen.forward(50)
+    pen.left(90)
+  def drawMenu(self):
+    pen.penup()
+    pen.home()
+    pen.clear()
+    pen.goto(0,0)
+    pen.pendown()
+    self.drawrekt()
+    pen.goto(15,10)
+    pen.write('Play',font=("Ariel",25,"normal")) 
+    pen.penup()  
+  def drawMain(self):
+    pen.clear()
+    pen.write('Main scene loaded')                 
+
+scene = Menu()
+
+screen.onkey(scene.drawMain, 'Space')
+screen.onkey(scene.drawMenu, 'esc')
+screen.listen()
