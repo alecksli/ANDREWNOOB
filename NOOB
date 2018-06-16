@@ -4,6 +4,7 @@ pen = turtle.Turtle()
 screen = turtle.Screen()
 
 class Menu:
+# constructor
   def __init__(self):
     self.loadScreen("Menu")
   def loadScreen(self,sceneName):
@@ -39,3 +40,5 @@ scene = Menu()
 screen.onkey(scene.drawMain, 'Space')
 screen.onkey(scene.drawMenu, 'esc')
 screen.listen()
+
+#you like men
